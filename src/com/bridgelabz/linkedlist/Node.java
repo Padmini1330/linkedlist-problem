@@ -1,9 +1,9 @@
 package com.bridgelabz.linkedlist;
 
-public class Node <K>
+public class Node<K> implements INode<K>
 {
 	public K key;
-	public Node next;
+	public INode next;
 	
 	public Node(K key)
 	{
@@ -11,9 +11,25 @@ public class Node <K>
 		this.next=null;
 	}
 	
-	public void setNext(Node next) 
+	public INode getNext() 
+	{
+		return next;
+	}
+	
+	public void setNext(INode next) 
 	{
 		this.next = next;
+	}
+
+	@Override
+	public K getKey() {
+		return key;
+	}
+
+	@Override
+	public void setKey(K key) {
+		this.key=key;
+		
 	}
 	
 	
