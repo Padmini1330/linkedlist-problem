@@ -10,6 +10,7 @@ public class LinkedList
 		this.head=null;
 		this.tail=null;
 	}
+	
 	public void append(INode newNode)
 	{
 		if(this.tail ==null)
@@ -35,6 +36,7 @@ public class LinkedList
 		while(tempNode.getNext()!=null)
 		{
 			myNodes.append(tempNode.getKey());
+			
 			if(!tempNode.equals(tail))
 				myNodes.append("->");
 			tempNode=tempNode.getNext();
