@@ -13,13 +13,16 @@ public class NodeMain
 		linkedlist.add(myFirstNode);
 		linkedlist.append(myThirdNode);
 		linkedlist.insert(myFirstNode,mySecondNode);
-		System.out.println("Before deletion:");
+		;
 		linkedlist.printNodes();
 		
-		linkedlist.popLast();
-		System.out.println("After deletion:");
-		linkedlist.printNodes();
-		
+		INode searchedKey = linkedlist.search(30);
+		if(searchedKey.getKey().equals(30)) {
+			System.out.println("Key Found:"+ searchedKey.getKey());
+		}
+		else {
+			System.out.println("Key Not Found");
+		}		
 		
 	}
 }
