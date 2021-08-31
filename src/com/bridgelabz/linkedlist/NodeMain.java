@@ -13,6 +13,11 @@ public class NodeMain
 		linkedlist.add(myFirstNode);
 		linkedlist.append(myThirdNode);
 		linkedlist.insert(myFirstNode,mySecondNode);
+		System.out.println("Before deletion:");
+		linkedlist.printNodes();
+		INode deletedNode = linkedlist.pop();
+		System.out.println("The deleted key value is:"+ deletedNode.getKey());
+		System.out.println("After deletion:");
 		linkedlist.printNodes();
 		
 	}
