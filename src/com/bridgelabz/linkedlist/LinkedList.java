@@ -63,9 +63,9 @@ public class LinkedList
 		INode nodeWithKeyValue = search(key);
 		if(nodeWithKeyValue.getKey().equals(key)) 
 		{
-			INode temporaryNode = nodeWithKeyValue.getNext();
+			INode tempNode = nodeWithKeyValue.getNext();
 			nodeWithKeyValue.setNext(newNode);
-			newNode.setNext(temporaryNode);
+			newNode.setNext(tempNode);
 		}
 		else 
 		{
@@ -96,25 +96,62 @@ public class LinkedList
 		currentNode = null;
 	}
 	
+	public INode deleteNodeWithKey(int key) 
+	{
+		
+		INode nodeWithKeyValue = search(key);
+		
+		if(nodeWithKeyValue != null) 
+		{
+			
+			INode tempNode = head;
+			while (tempNode!=null && tempNode.getNext() != nodeWithKeyValue) 
+			{
+				tempNode = tempNode.getNext();
+			}
+			tempNode.setNext(nodeWithKeyValue.getNext());
+			return nodeWithKeyValue;
+			
+		}
+		else 
+		{
+			System.out.println("Key Node Found");
+			return null;
+		}
+	}
+	
 	public INode search(int key) {
-		INode temporaryNode = head;
+		INode tempNode = head;
 		boolean isFound = false;
-		while (temporaryNode != null  && isFound == false) {
-			if(temporaryNode.getKey().equals(key)) {
+		while (tempNode != null  && isFound == false) {
+			if(tempNode.getKey().equals(key)) {
 				isFound = true;
 			}
 			else {
 				
-				temporaryNode = temporaryNode.getNext();
+				tempNode = tempNode.getNext();
 			}
 		}
 		if(isFound)
-			return temporaryNode;
-		else {
+			return tempNode;
+		else 
+		{
 			return head;
 		}
 	}
 
+	public int size() 
+	{
+		int numberOfNode = 0;
+		INode tempNode = this.head;
+		while(tempNode!=null ) 
+		{
+			
+			tempNode = tempNode.getNext();
+			numberOfNode++;
+		}
+		return numberOfNode;
+	}
 	
 	public void printNodes()
 	{
