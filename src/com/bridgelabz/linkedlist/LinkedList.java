@@ -64,6 +64,21 @@ public class LinkedList
 		return tempNode;
 		
 	}
+	
+	public void popLast() 
+	{
+		INode previousNode = null, currentNode = head;
+		while (currentNode.getNext() != null) 
+		{
+			previousNode = currentNode;
+			currentNode = currentNode.getNext();
+		}
+		previousNode.setNext(null);
+		tail = previousNode;
+		System.out.println("Deleted key value: " + currentNode.getKey());
+		currentNode = null;
+	}
+	
 	public void printNodes()
 	{
 		StringBuffer myNodes=new StringBuffer();
