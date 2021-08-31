@@ -19,16 +19,10 @@ public class NodeMain
 		linkedlist.insertWithKey(valueOfPreviousNode, nodeToBeInserted);
 		linkedlist.printNodes();
 		
-		INode searchedKey = linkedlist.search(30);
-		if(searchedKey.getKey().equals(30)) 
-		{
-			System.out.println("Key Found:"+ searchedKey.getKey());
-		}
-		else 
-		{
-			System.out.println("Key Not Found");
-		}		
-		
-	
+		INode deletedNode = linkedlist.deleteNodeWithKey(40);
+		System.out.println("The deleted key value is:"+deletedNode.getKey());
+		int sizeOfList = linkedlist.size();
+		linkedlist.printNodes();
+		System.out.println("The size of the linked list is: "+sizeOfList);
 	}
 }
