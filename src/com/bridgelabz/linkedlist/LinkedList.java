@@ -10,7 +10,7 @@ public class LinkedList
 		this.head=null;
 		this.tail=null;
 	}
-	public void add(INode newNode)
+	public void append(INode newNode)
 	{
 		if(this.tail ==null)
 		{
@@ -22,9 +22,8 @@ public class LinkedList
 		}
 		else
 		{
-			INode tempNode=this.head;
-			this.head=newNode;
-			this.head.setNext(tempNode);
+			this.tail.setNext(newNode);
+			this.tail=newNode;
 		}
 		
 	}
